@@ -17,13 +17,9 @@ class _CurrebcyListPage extends State<CurrencyListPage> {
   bool isInit = false;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   void didChangeDependencies() {
     if (!isInit) {
+      isInit = true;
       BlocProvider.of<CurrencyPairBloc>(context).add(FetchCurrencyList());
     }
     super.didChangeDependencies();
